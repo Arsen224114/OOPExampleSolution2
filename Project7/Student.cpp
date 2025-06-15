@@ -1,0 +1,140 @@
+#pragma once
+#include "main.h"
+#include "Student.h"
+
+//defualt_constructor
+Student::Student() : Student("no name", "no surname") {
+	//cout << "defualt_constructor" << endl;
+
+}
+
+Student::Student(string firstname, string surname) : firstname(firstname),
+surname(surname), age(0), _class(0), gender('m'), alive(false),
+mark(0), size(0), subjects(nullptr) {
+	//cout << "defualt with arguments" << endl;
+
+}
+
+Student::Student(string firstname, string surname, int age) : Student(firstname,
+	surname, age, 0, 'm', true, 4, 0, nullptr) {
+	//cout << "defualt with arguments" << endl;
+
+}
+
+//canonical constructor
+Student::Student(string firstname, string surname, int age) : Student(firstname, surname, age,
+	int _class, char gender, bool alive, double mark, int size, string subjects) {
+	//cout << "canonical constructor" << endl;
+	this->firstname = firstname;
+	this->surname = surname;
+	this->age = age;
+	this->_class = _class;
+	this->gender = gender;
+	this->alive = alive;
+	this->mark = mark;
+	this->size = size;
+	this->subjects = subjects;
+}
+
+
+
+// copy-constructor
+Student::Student(const Student& student) : Student(student.firstname,
+	student.surname, student.age, student._class, student.gender,
+	student.alive, student.mark, student.size, student.subjects) {
+	//cout << "canonical constructor" << endl;
+
+}
+
+
+Student::~Student() {
+	cout << "destructor" << endl;
+	if (subjects != nullptr) {
+		delete[] subjects;
+	}
+}
+
+string Student::getFirstName() {
+	return firstname;
+}
+
+void setFirstName(string firstname) {
+	firstname = firstname;
+}
+
+void Student::setFirstName(string firstname) {
+	this->firstname = firstname;
+}
+
+string Student::getSurname(string surname) {
+	return surname;
+}
+
+void Student::setSurname(string surname) {
+	surname = surname;
+}
+
+void Student::setSurname(string surname) {
+	this->surname = surname;
+}
+
+int Student::getAge() {
+	return age;
+}
+
+void Student::setAge(int age) {
+	if (age > 0) {
+		this->age = age;
+	}
+}
+
+int Student::getClass() {
+	return _class;
+}
+
+void Student::setClass(int _class) {
+	if (_class >= 1 && _class <= 11) {
+		this->_class = _class;
+	}
+}
+
+bool Student::isAlive() {
+	return alive;
+}
+
+void Student::setAlive(bool alive) {
+	this->alive = alive;
+}
+
+double Student::getMark() {
+	return mark;
+}
+
+void Student::setMark(int mark) {
+	if (mark >= 0 && mark <= 10) {
+		this->mark = mark;
+	}
+}
+
+char Student::getGender() {
+	return gender;
+}
+
+void Student::setGender(char gender) {
+	if (gender == 'm' ||  gender == 'f') {
+		this->gender = gender;
+	}
+}
+
+
+string Student::toString() {
+	string s = firstname;
+	s += " " + surname;
+	s += ", age = " + to_string(age);
+	s += ", class = " + to_string(_class);
+	s += ", gender = " + to_string(gender);
+	s += ", is alive - ";
+	s += (alive ? "yes" : "no");
+	s += ", average mark = " + to_string(mark);
+	return s;
+}
