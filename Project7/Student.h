@@ -15,7 +15,7 @@ private:
 
 public:
 	//defualt_constructor
-	Student() : Student("no name", "no surname");
+	Student() : Student("no name", "no surname") {}
 	Student(string firstname, string surname) : firstname(firstname),
 		surname(surname), age(0), _class(0), gender('m'), alive(false),
 		mark(0), size(0), subjects(nullptr) {
@@ -24,10 +24,12 @@ public:
 	}
 
 	Student(string firstname, string surname, int age) : Student(firstname,
-		surname, age, 0, 'm', true, 4) {
+		surname, age, 0, 'm', true, 4, 0, nullptr) {
 		//cout << "defualt with arguments" << endl;
-
 	}
+
+	Student(string firstname, string surname, int age, int _class,
+		char gender, bool alive, double mark, int size, string* subjects);
 
 	// copy-constructor
 	Student(const Student& student) : Student(student.firstname,
@@ -55,3 +57,4 @@ public:
 	void setGender(char gender);
 
 	string toString();
+};

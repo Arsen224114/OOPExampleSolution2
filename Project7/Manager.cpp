@@ -1,42 +1,36 @@
 #include "Student.h"
 #include "Manager.h"
+#include "initializer.h"
 
+int main() {
+	int size;
 
-	const int MAX_MARK = 10;
-	const int MIN_MARK = 4;
+	cout << "Input size of students: ";
+	cin >> size;
 
-	Student Manager::findBestStudent(Student* student, int size) {
-		for (int i = 0; i < size; i++)
-		{
-			if (students[i].getMark == MAX_MARK) {
-				return students[i];
-			}
-		}
+	Student* students = new Student[size];
 
-		return Student();
-
-	}
-
-	Student Manager::findWorstStudent(Student* student, int size) {
-		for (int i = 0; i < size; i++)
-		{
-			if (students[i].getMark == MIN_MARK) {
-				return students[i];
-			}
-		}
-
-		return Student();
-
-	}
-}
-
-double Manager::calculateAverageMark(Student* student, int size) {
-	double avg = 0;
+	Initializer inecalaizer;
 
 	for (int i = 0; i < size; i++)
 	{
-		avg += students[i].getMark;
+		cout << students[i].toString() << endl;
+
 	}
 
-	return avg / size;
+	Manager manager;
+
+	Student bestStudent = manager.findBestStudent(students, size);
+	Student worstStudent = manager.findWorstStudent(students, size);
+	double average = manager.calculateAverageMark(students, size);
+
+	cout << "Best student: " << bestStudent.toString() << endl;
+	cout << "Best student: " << worstStudent.toString() << endl;
+	cout << "Student' average mark is " << average << endl;
+
+
+
+	delete[] students;
+
+	return 0;
 }

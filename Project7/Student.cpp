@@ -2,28 +2,11 @@
 #include "main.h"
 #include "Student.h"
 
-//defualt_constructor
-Student::Student() : Student("no name", "no surname") {
-	//cout << "defualt_constructor" << endl;
 
-}
-
-Student::Student(string firstname, string surname) : firstname(firstname),
-surname(surname), age(0), _class(0), gender('m'), alive(false),
-mark(0), size(0), subjects(nullptr) {
-	//cout << "defualt with arguments" << endl;
-
-}
-
-Student::Student(string firstname, string surname, int age) : Student(firstname,
-	surname, age, 0, 'm', true, 4, 0, nullptr) {
-	//cout << "defualt with arguments" << endl;
-
-}
 
 //canonical constructor
-Student::Student(string firstname, string surname, int age) : Student(firstname, surname, age,
-	int _class, char gender, bool alive, double mark, int size, string subjects) {
+Student::Student(string firstname, string surname, int age,	int _class, 
+	char gender, bool alive, double mark, int size, string* subjects) {
 	//cout << "canonical constructor" << endl;
 	this->firstname = firstname;
 	this->surname = surname;
@@ -36,15 +19,6 @@ Student::Student(string firstname, string surname, int age) : Student(firstname,
 	this->subjects = subjects;
 }
 
-
-
-// copy-constructor
-Student::Student(const Student& student) : Student(student.firstname,
-	student.surname, student.age, student._class, student.gender,
-	student.alive, student.mark, student.size, student.subjects) {
-	//cout << "canonical constructor" << endl;
-
-}
 
 
 Student::~Student() {

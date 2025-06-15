@@ -1,8 +1,9 @@
 #pragma once
 #include "Student.h"
-#include "inecalaizer.h"
+#include "initializer.h"
+#include <string>
 
-void Inicalaizer::init(Student* students, int size) {
+void Initializer::init(Student* students, int size) {
 	const int NAME_SIZE = 10;
 
 	const string NAMES[]{ "Alex", "Danik", "Max", "Nikita", "Arseniy",
@@ -24,14 +25,14 @@ void Inicalaizer::init(Student* students, int size) {
 	{
 		Student temp;
 		temp.setFirstName(NAMES[rand() % NAME_SIZE]);
-		temp.setSurname(ALFABET((char)(rand() % ('Z' - 'A' + 1) + 'A')) + ".");
+		temp.setSurname(to_string(ALFABET[rand() % ALFABET_SIZE]) + ".");
 		temp.setAlive(true);
 		temp.setAge(rand() % (maxAge - minAge + 1) + minAge);
-		temp.mark(rand() % (maxMark - minMark + 1) + minMark);
-		temp.setClass(rand() % (maxClass - minClass = 1) + minClass);
+		temp.setMark(rand() % (maxMark - minMark + 1) + minMark);
+		temp.setClass(rand() % (maxClass - minClass + 1) + minClass);
 		//temp.size = 0;
 		//temp.subjects = nullptr;
-		temp.setGender = 'm';
+		temp.setGender('m');
 
 		students[i] = temp;
 	}

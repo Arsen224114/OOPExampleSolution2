@@ -1,5 +1,6 @@
 #include "Student.h"
 #include "Manager.h"
+#include "initializer.h"
 
 int main () {
 	int size;
@@ -9,7 +10,7 @@ int main () {
 
 	Student* students = new Student[size];
 
-	inecalaizer inecalaizer;
+	Initi inecalaizer;
 
 	for (int i = 0; i < size; i++)
 	{

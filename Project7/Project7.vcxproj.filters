@@ -21,13 +21,13 @@
     <ClCompile Include="Student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="inecalaizer.h">
+    <ClCompile Include="initializer.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="Manager.cpp">
+    <ClCompile Include="inicalaizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="inicalaizer.cpp">
+    <ClCompile Include="Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
