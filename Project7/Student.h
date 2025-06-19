@@ -41,10 +41,8 @@ public:
 	~Student();
 	string getFirstName();
 	void setFirstName(string firstname);
-	void setFirstName(string firstname);
-	string getSurname(string surname);
+	string getSurname();
 	void setSurname(string surname);
-	void setSutname(string surname);
 	int getAge();
 	void setAge(int age);
 	int getClass();

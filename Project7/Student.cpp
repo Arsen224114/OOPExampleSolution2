@@ -32,20 +32,12 @@ string Student::getFirstName() {
 	return firstname;
 }
 
-void setFirstName(string firstname) {
-	firstname = firstname;
-}
-
 void Student::setFirstName(string firstname) {
 	this->firstname = firstname;
 }
 
-string Student::getSurname(string surname) {
+string Student::getSurname() {
 	return surname;
-}
-
-void Student::setSurname(string surname) {
-	surname = surname;
 }
 
 void Student::setSurname(string surname) {
