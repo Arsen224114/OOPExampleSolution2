@@ -10,7 +10,7 @@ int main () {
 
 	Student* students = new Student[size];
 
-	Initi inecalaizer;
+	Initializer initializer;
 
 	for (int i = 0; i < size; i++)
 	{
