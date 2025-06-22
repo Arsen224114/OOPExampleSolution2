@@ -1,7 +1,6 @@
 #include "Queue.h"
-Queue::Queue() {
 
-}
+Queue::Queue() { }
 
 void Queue::enqueue(int number) {
 	if (isEmpty()) {
@@ -35,6 +34,7 @@ int Queue::dequeue() {
 		
 		delete[]numbers;
 		numbers = temp;
+		size--;
 
 		return number;
 	}
@@ -52,6 +52,7 @@ bool Queue::isEmpty() {
 void Queue::clear() {
 	if (!isEmpty()) {
 		delete[] numbers;
+		size = 0;
 	}
 }
 
@@ -60,11 +61,14 @@ int Queue::getSize() {
 }
 
 string Queue::toString() {
+	if (isEmpty()) {
+		return "Queue is empty.";
+	}
 	string s = " ";
 
 	for (int i = 0; i < size; i++)
 	{
-		s += numbers[i].toString() + "\n";
+		s += to_string(numbers[i]) + " ";
 	}
 
 	return s;
