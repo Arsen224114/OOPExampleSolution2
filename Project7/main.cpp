@@ -1,9 +1,14 @@
 #include "Student.h"
 #include "Manager.h"
 #include "initializer.h"
+#include "Worker.h"
 
 int main () {
-	int size;
+	Worker worker;
+
+	worker.
+
+	/*int size;
 
 	cout << "Input size of students: ";
 	cin >> size;
@@ -30,7 +35,7 @@ int main () {
 
 
 
-	delete[] students;
+	delete[] students;*/
 
 	return 0;
 }
