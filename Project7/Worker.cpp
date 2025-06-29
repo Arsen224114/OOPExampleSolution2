@@ -1,16 +1,13 @@
 #include "Worker.h"
 
-Worker::Worker() : Worker("", "", 0, '\0', false, 0) { }
+Worker::Worker() : Worker("", "", 0, '\0', false, 0) {
+	cout << "Constructor of class worker"<< endl;
+}
 
 Worker::Worker(string firstname, string surname, int age,
-	char gender, bool alive, double salary) {
+	char gender, bool alive, double salary) : Human(firstname, surname, age, alive, gender) {
 	//cout << "canonical constructor" << endl;
-	this->setFirstName(firstname);
-	this->setSurname(surname);
-	this->setAge(age);
-	this->setAge(gender);
-	this->setAlive(alive);
-	this->salary = salary;
+	salary(salary) { }
 	
 }
 Worker::~Worker() {
@@ -28,12 +25,8 @@ void Worker::setSalary(double salary) {
 }
 
 string Worker::toString() {
-	string s = getFirstName();
-	s += " " + getSurname();
-	s += ", age = " + to_string(age);
-	s += ", gender = " + to_string(gender);
-	s += ", is alive - ";
-	s += (isAlive() ? "yes" : "no");
-	s += ", average mark = " + to_string(salary);
-	return s;
+	//string s = Human::toString();
+	//s += ", salary = " + to_string(salary);
+	//return s;
+	return "Worker";
 }

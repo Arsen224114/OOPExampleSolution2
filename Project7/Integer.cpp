@@ -1,4 +1,5 @@
-#include "Integer.h"Add commentMore actions
+#include "Integer.h"
+
 
 Integer Integer::add(Integer number) {
 	Integer temp(value + number.value);

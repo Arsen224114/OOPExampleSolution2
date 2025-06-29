@@ -19,8 +19,8 @@ public:
 		char gender, bool alive);
 	~Human();
 
-	string getFirstName();
-	void setFirstName(string firstname);
+	string getFirstname();
+	void setFirstname(string firstname);
 	string getSurname();
 	void setSurname(string surname);
 	int getAge();

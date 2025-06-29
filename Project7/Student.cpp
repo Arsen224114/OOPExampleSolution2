@@ -2,17 +2,20 @@
 #include "Student.h"
 #include "Human.h"
 
+Student::Student() : Human("", "", 0, 0, '\0', false), _class(_class),
+size(size), subjects(subjects) { //Student("", "", 0, 0, '\0', false, 0, 0, nullptr) {
+	cout << "Constructor of class Student" << endl;
+	cout < "id = " << Student::id = << endl;
+	cout < "id = " << Human::id = << endl;
+
+}
 
 //canonical constructor
 Student::Student(string firstname, string surname, int age,	int _class, 
-	char gender, bool alive, double mark, int size, string* subjects) {
-	//cout << "canonical constructor" << endl;
-	this->setFirstName(firstname);
-	this->setSurname(surname);
-	this->setAge(age);
-	this->_class = _class;
-	this->setAge(gender);
-	this->setAlive(alive);
+	char gender, bool alive, double mark, int size, string* subjects) : 
+    Human(firstname,surname,age,alive,gender) {
+	cout << "Constructor of class Student" << endl;
+	this->gender = gender;
 	this->mark = mark;
 	this->size = size;
 	this->subjects = subjects;
@@ -50,13 +53,8 @@ void Student::setMark(int mark) {
 
 
 string Student::toString() {
-	string s = getFirstName();
-	s += " " + getSurname();
-	s += ", age = " + to_string(age);
+	string s = Human::toString();
 	s += ", class = " + to_string(_class);
-	s += ", gender = " + to_string(gender);
-	s += ", is alive - ";
-	s += (isAlive() ? "yes" : "no");
 	s += ", average mark = " + to_string(mark);
 	return s;
 }

@@ -1,11 +1,13 @@
 #include "Human.h"
 
-Human::Human() : Human("", "", 0, '\0', false) { }
+Human::Human() : Human("", "", 0, '\0', false) {
+	cout << "Constructor of class human" << endl;
+}
 
 Human::Human(string firstname, string surname, int age,
 	char gender, bool alive) {
 	//cout << "canonical constructor" << endl;
-	this->setFirstName(firstname);
+	this->setFirstname(firstname);
 	this->setSurname(surname);
 	this->setAge(age);
 	this->setAge(gender);
@@ -13,14 +15,16 @@ Human::Human(string firstname, string surname, int age,
 }
 
 Human::~Human() {
+	cout << "Destructor of class human" << endl;
+
 	//...
 }
 
-string Human::getFirstName() {
+string Human::getFirstname() {
 	return firstname;
 }
 
-void Human::setFirstName(string firstname) {
+void Human::setFirstname(string firstname) {
 	this->firstname = firstname;
 }
 
@@ -61,11 +65,12 @@ void Human::setGender(char gender) {
 }
 
 string Human::toString() {
-	string s = firstname;
+	/*string s = firstname;
 	s += " " + surname + ".";
 	s += ", age = " + to_string(age);
 	s += ", gender = " + to_string(gender);
 	s += ", is alive - ";
 	s += (alive ? "yes" : "no");
-	return s;
+	return s;*/
+	return "Human";
 }
